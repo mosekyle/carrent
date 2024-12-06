@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <style>
+        /* Make the body fill the entire viewport and center content */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Style the form container */
+        form {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 90%; /* Fit well on small screens */
+            max-width: 400px; /* Limit width on larger screens */
+        }
+
+        /* Style the submit button */
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Add hover effect to the button */
+        button:hover {
+            background-color: #218838;
+        }
+
+        /* Style form fields like input, select, and textarea */
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        /* Style labels */
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Book Now</button>
+    </form>
+</body>
+</html>

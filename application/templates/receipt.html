@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Receipt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .receipt-details {
+            margin-top: 20px;
+        }
+        .receipt-details table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .receipt-details table, th, td {
+            border: 1px solid #ddd;
+        }
+        .receipt-details th, .receipt-details td {
+            padding: 12px;
+            text-align: left;
+        }
+        .receipt-details th {
+            background-color: #f2f2f2;
+        }
+        .total {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: right;
+        }
+        .btn-back {
+            display: block;
+            width: 150px;
+            margin: 30px auto;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .btn-back:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Booking Receipt</h1>
+
+    <div class="receipt-details">
+        <table>
+            <tr>
+                <th>Car</th>
+                <td>{{ booking.car }}</td>
+            </tr>
+            <tr>
+                <th>Pickup Location</th>
+                <td>{{ booking.pickup_location }}</td>
+            </tr>
+            <tr>
+                <th>Dropoff Location</th>
+                <td>{{ booking.dropoff_location }}</td>
+            </tr>
+            <tr>
+                <th>Pickup Date</th>
+                <td>{{ booking.pickup_date }}</td>
+            </tr>
+            <tr>
+                <th>Pickup Time</th>
+                <td>{{ booking.pickup_time }}</td>
+            </tr>
+            <tr>
+                <th>Dropoff Date</th>
+                <td>{{ booking.dropoff_date }}</td>
+            </tr>
+            <tr>
+                <th>Dropoff Time</th>
+                <td>{{ booking.dropoff_time }}</td>
+            </tr>
+        </table>
+
+        <div class="total">
+            Total Amount: ${{ booking.amount }}
+        </div>
+    </div>
+
+    <a href="{% url 'cars' %}" class="btn-back">Back to Cars</a>
+</div>
+
+</body>
+</html>
